@@ -9,15 +9,19 @@ O projeto GameStore é uma aplicação voltada para o gerenciamento eficiente de
 
 🛠️ Funcionalidades
 
-Gerenciamento de Jogos: Cadastro, título, e preço.
-Cadastro de Clientes: Registro e manutenção de dados dos clientes, como nome, endereço, telefone e histórico de compras.
-Gerenciamento de Pedidos: Criação, controle de status de pedidos (pendente, em processamento, enviado, entregue).
-Controle de Estoque: Monitoramento da quantidade de produtos em estoque.
+- Gerenciamento de Jogos: Cadastro, título, e preço.
+
+- Cadastro de Clientes: Registro e manutenção de dados dos clientes, como nome, endereço, telefone e histórico de compras.
+
+- Gerenciamento de Pedidos: Criação, controle de status de pedidos (pendente, em processamento, enviado, entregue).
+
+- Controle de Estoque: Monitoramento da quantidade de produtos em estoque.
 
 🚀 Tecnologias Utilizadas
 
-Linguagem de Programação: SQL
-Banco de Dados: PostgreSQL
+- Linguagem de Programação: SQL
+
+- Banco de Dados: PostgreSQL
 
 📦 Estrutura do Projeto
 
