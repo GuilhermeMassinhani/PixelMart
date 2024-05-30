@@ -19,7 +19,7 @@ Controle de Estoque: Monitoramento da quantidade de produtos em estoque.
 Linguagem de Programação: SQL
 Banco de Dados: PostgreSQL
 
-#📦 Estrutura do Projeto
+📦 Estrutura do Projeto
 
 
 
