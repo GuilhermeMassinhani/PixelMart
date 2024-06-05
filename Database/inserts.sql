@@ -6,6 +6,8 @@ INSERT INTO Cliente_final VALUES(1,'Cliente teste','Qualquer coisa teste','49494
 INSERT INTO Pedido VALUES(1,1,'2024-06-02','ativo');
 INSERT INTO Faturamento VALUES(1,1,14.99,'2024-06-02');
 INSERT INTO entrega VALUES(1,1,'2024-06-02','2024-06-10','enviado','sedex');
+INSERT INTO entrega VALUES(3, 1, '2024-06-04', '2024-06-12', 'entregue', 'sedex');
+INSERT INTO entrega VALUES(4, 2, '2024-06-05', '2024-06-13', 'enviado', 'expresso');
 
 Select * from entrega;
 
