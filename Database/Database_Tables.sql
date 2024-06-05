@@ -19,7 +19,7 @@ CREATE TABLE Produto (
 );
 
 -- Tabela Catálogo_de_produtos
-CREATE TABLE Catálogo_de_produtos (
+CREATE TABLE Catalogo_de_produtos (
     ID_Catalogo SERIAL PRIMARY KEY,
     ID_Produto INT NOT NULL,
     ID_Loja INT NOT NULL,
@@ -77,3 +77,13 @@ CREATE TABLE Entrega (
     Método_Entrega VARCHAR(50),
     FOREIGN KEY (ID_Pedido) REFERENCES Pedido(ID_Pedido)
 );
+
+
+DROP TABLE IF EXISTS Entrega CASCADE;
+DROP TABLE IF EXISTS Faturamento CASCADE;
+DROP TABLE IF EXISTS Pedido CASCADE;
+DROP TABLE IF EXISTS Estoque CASCADE;
+DROP TABLE IF EXISTS Catalogo_de_produtos CASCADE;
+DROP TABLE IF EXISTS Cliente_final CASCADE;
+DROP TABLE IF EXISTS Produto CASCADE;
+DROP TABLE IF EXISTS Lojas_fornecedoras CASCADE;
