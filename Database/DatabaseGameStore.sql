@@ -1,1 +1,1 @@
-create database GameStore;
+create database PixelMart;
