@@ -1,11 +1,11 @@
 
-# Projeto Game Store
+# Projeto PixelMart
 
-Bem-vindo(a) ao repositório do projeto 🎮 GameStore 🎮! Este projeto foi desenvolvido com o objetivo de estudar o gerenciamento de informações relacionadas a uma loja de jogos, como jogos, consoles, clientes, pedidos, entre outros.
+Bem-vindo(a) ao repositório do projeto 🎮 PixelMart 🎮! Este projeto foi desenvolvido com o objetivo de estudar o gerenciamento de informações relacionadas a uma loja de jogos, como jogos, consoles, clientes, pedidos, entre outros.
 
 📚 Descrição
 
-O projeto GameStore é uma aplicação voltada para o gerenciamento eficiente de uma loja de jogos. Ele permite o controle de estoque de jogos e consoles, cadastro de clientes, gerenciamento de pedidos e vendas, entre outras funcionalidades essenciais para o funcionamento de uma loja de jogos.
+O projeto PixelMart é uma aplicação voltada para o gerenciamento eficiente de uma loja de jogos. Ele permite o controle de estoque de jogos e consoles, cadastro de clientes, gerenciamento de pedidos e vendas, entre outras funcionalidades essenciais para o funcionamento de uma loja de jogos.
 
 🛠️ Funcionalidades
 
