@@ -9,7 +9,7 @@ Bem-vindo(a) ao repositório do projeto 🎮 PixelMart 🎮! Este projeto foi de
 
 ## Funcionalidades
 
-🛠️🎮 O projeto 🎮 PixelMart 🎮 oferece as seguintes funcionalidades principais: 🛠️
+🛠️🎮 O projeto 🎮 PixelMart 🎮 oferece as seguintes funcionalidades principais: 
 
 - Gerenciamento de Jogos: Cadastro, título, e preço.
 
@@ -20,7 +20,7 @@ Bem-vindo(a) ao repositório do projeto 🎮 PixelMart 🎮! Este projeto foi de
 - Controle de Estoque: Monitoramento da quantidade de produtos em estoque.
 
  ## Tecnologias Utilizadas
- 🚀 As tecnologias utilizadas no projeto 🎮 PixelMart 🎮 são: 🚀
+ 🚀 As tecnologias utilizadas no projeto 🎮 PixelMart 🎮 são: 
 
 - Linguagem de Programação: SQL
 
