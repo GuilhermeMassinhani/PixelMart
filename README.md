@@ -35,7 +35,7 @@ Bem-vindo(a) ao repositório do projeto 🎮 PixelMart 🎮! Este projeto foi de
   
 - A pasta `/database` contém o script SQL para criação do banco de dados.
   
-- O arquivo README.md no diretório raiz fornece uma visão geral do projeto e suas funcionalidades.
+- O arquivo `README.md` no diretório raiz fornece uma visão geral do projeto e suas funcionalidades.
 
 
 
