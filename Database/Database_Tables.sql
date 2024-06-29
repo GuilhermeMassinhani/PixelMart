@@ -1,3 +1,13 @@
+-- Caso existam as determinadas tabelas antes, elas irão ser dropadas.
+DROP TABLE IF EXISTS entrega CASCADE;
+DROP TABLE IF EXISTS faturamento CASCADE;
+DROP TABLE IF EXISTS pedido CASCADE;
+DROP TABLE IF EXISTS estoque CASCADE;
+DROP TABLE IF EXISTS catalogo_produto CASCADE;
+DROP TABLE IF EXISTS cliente_final CASCADE;
+DROP TABLE IF EXISTS produto CASCADE;
+DROP TABLE IF EXISTS loja_fornecedora CASCADE;
+
 -- Tabela De Lojas Fornecedoras.
 CREATE TABLE loja_fornecedora (
     id_loja SERIAL PRIMARY KEY, 
@@ -32,39 +42,7 @@ COMMENT ON COLUMN produto.categoria IS 'Categoria do produto';
 COMMENT ON COLUMN produto.preco_base IS 'Preço base do produto';
 COMMENT ON COLUMN produto.fabricante IS 'Fabricante do produto';
 
--- Tabela De Catálogo de Produtos.
-CREATE TABLE catalogo_produto (
-    id_catalogo SERIAL PRIMARY KEY,  
-    id_produto INT NOT NULL,  
-    id_loja INT NOT NULL,  
-    preco DECIMAL(10, 2),  
-    data_inclusao DATE,  
-    FOREIGN KEY (id_produto) REFERENCES produto(id_produto), 
-    FOREIGN KEY (id_loja) REFERENCES loja_fornecedora(id_loja)  
-);
-
-COMMENT ON COLUMN catalogo_produto.id_catalogo IS 'Código do catálogo de produto';
-COMMENT ON COLUMN catalogo_produto.id_produto IS 'Código do produto';
-COMMENT ON COLUMN catalogo_produto.id_loja IS 'Código da loja fornecedora';
-COMMENT ON COLUMN catalogo_produto.preco IS 'Preço do produto na loja fornecedora';
-COMMENT ON COLUMN catalogo_produto.data_inclusao IS 'Data de inclusão do produto no catálogo';
-
--- Tabela De Estoque.
-CREATE TABLE estoque (
-    id_estoque SERIAL PRIMARY KEY,  
-    id_produto INT NOT NULL,  
-    id_loja INT NOT NULL,  
-    quantidade_disponivel INT,  
-    FOREIGN KEY (id_produto) REFERENCES produto(id_produto), 
-    FOREIGN KEY (id_loja) REFERENCES loja_fornecedora(id_loja) 
-);
-
-COMMENT ON COLUMN estoque.id_estoque IS 'Código do estoque';
-COMMENT ON COLUMN estoque.id_produto IS 'Código do produto';
-COMMENT ON COLUMN estoque.id_loja IS 'Código da loja fornecedora';
-COMMENT ON COLUMN estoque.quantidade_disponivel IS 'Quantidade disponível do produto no estoque';
-
--- Tabela de Cliente Final.
+-- Tabela De Cliente Final.
 CREATE TABLE cliente_final (
     id_cliente SERIAL PRIMARY KEY,  
     nome_cliente VARCHAR(50) NOT NULL,  
@@ -127,12 +105,34 @@ COMMENT ON COLUMN entrega.data_entrega IS 'Data de entrega ao cliente final';
 COMMENT ON COLUMN entrega.status_entrega IS 'Status atual da entrega';
 COMMENT ON COLUMN entrega.metodo_entrega IS 'Método de entrega utilizado';
 
---Caso exista as determinadas tabelas antes elas iram ser dropadas.
-DROP TABLE IF EXISTS entrega CASCADE;
-DROP TABLE IF EXISTS faturamento CASCADE;
-DROP TABLE IF EXISTS pedido CASCADE;
-DROP TABLE IF EXISTS estoque CASCADE;
-DROP TABLE IF EXISTS catalogo_produto CASCADE;
-DROP TABLE IF EXISTS cliente_final CASCADE;
-DROP TABLE IF EXISTS produto CASCADE;
-DROP TABLE IF EXISTS loja_fornecedora CASCADE;
+-- Tabela De Catálogo de Produtos.
+CREATE TABLE catalogo_produto (
+    id_catalogo SERIAL PRIMARY KEY,  
+    id_produto INT NOT NULL,  
+    id_loja INT NOT NULL,  
+    preco DECIMAL(10, 2),  
+    data_inclusao DATE,  
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto), 
+    FOREIGN KEY (id_loja) REFERENCES loja_fornecedora(id_loja)  
+);
+
+COMMENT ON COLUMN catalogo_produto.id_catalogo IS 'Código do catálogo de produto';
+COMMENT ON COLUMN catalogo_produto.id_produto IS 'Código do produto';
+COMMENT ON COLUMN catalogo_produto.id_loja IS 'Código da loja fornecedora';
+COMMENT ON COLUMN catalogo_produto.preco IS 'Preço do produto na loja fornecedora';
+COMMENT ON COLUMN catalogo_produto.data_inclusao IS 'Data de inclusão do produto no catálogo';
+
+-- Tabela De Estoque.
+CREATE TABLE estoque (
+    id_estoque SERIAL PRIMARY KEY,  
+    id_produto INT NOT NULL,  
+    id_loja INT NOT NULL,  
+    quantidade_disponivel INT,  
+    FOREIGN KEY (id_produto) REFERENCES produto(id_produto), 
+    FOREIGN KEY (id_loja) REFERENCES loja_fornecedora(id_loja) 
+);
+
+COMMENT ON COLUMN estoque.id_estoque IS 'Código do estoque';
+COMMENT ON COLUMN estoque.id_produto IS 'Código do produto';
+COMMENT ON COLUMN estoque.id_loja IS 'Código da loja fornecedora';
+COMMENT ON COLUMN estoque.quantidade_disponivel IS 'Quantidade disponível do produto no estoque';
