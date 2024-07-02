@@ -6,26 +6,21 @@ SELECT
     telefone, 
     email, 
     cpf,
-    data_nascimento
+    data_nasc
 FROM 
     cliente_final
 WHERE 
-    EXTRACT(YEAR FROM AGE(data_nascimento)) BETWEEN 20 AND 30
-    AND sexo = 'M'
+    EXTRACT(YEAR FROM AGE(data_nasc)) BETWEEN 20 AND 30
+    AND sexo_cliente = 'M'
 ORDER BY 
     nome_cliente DESC;
-   
-   
-ALTER TABLE cliente_final ADD COLUMN data_nascimento DATE;
-
-ALTER TABLE cliente_final ADD COLUMN sexo CHAR(1);
 
 
 --2)
 SELECT 
     pedido.id_pedido,
     cliente_final.nome_cliente,
-    cliente_final.cidade,
+    cliente_final.cidade_cliente AS cidade,
     pedido.data_pedido,
     pedido.status_pedido
 FROM 
@@ -35,11 +30,11 @@ JOIN
 WHERE 
     EXTRACT(MONTH FROM pedido.data_pedido) IN (1, 3, 5, 7, 9, 11)
     AND EXTRACT(YEAR FROM pedido.data_pedido) = 2023
-    AND cliente_final.cidade IN ('São Miguel do Oeste', 'Descanso')
+    AND cliente_final.cidade_cliente IN ('São Miguel do Oeste', 'Descanso')
 ORDER BY 
     pedido.data_pedido ASC;
-   
-ALTER TABLE cliente_final ADD COLUMN cidade VARCHAR(100);
+
+ 
 
 --3)
 
@@ -48,9 +43,9 @@ SELECT
     lf.nome_loja,
     COUNT(lf.id_loja) OVER(PARTITION BY lf.endereco) AS total_lojas
 FROM 
-    loja_fornecedora lf
+    lojas_Fornecedoras lf
 JOIN 
-    catalogo_produto cp ON lf.id_loja = cp.id_loja
+    catalogo_de_produtos cp ON lf.id_loja = cp.id_loja
 JOIN 
     produto p ON cp.id_produto = p.id_produto
 WHERE 
@@ -58,6 +53,7 @@ WHERE
     AND p.categoria = 'games para xbox'
 ORDER BY 
     total_lojas DESC, cidade, lf.nome_loja;
+
    
 --4) 
    
@@ -66,9 +62,9 @@ SELECT
     lf.nome_loja,
     COUNT(p.id_produto) AS total_games
 FROM 
-    loja_fornecedora lf
+    lojas_Fornecedoras lf
 JOIN 
-    catalogo_produto cp ON lf.id_loja = cp.id_loja
+    catalogo_de_produtos cp ON lf.id_loja = cp.id_loja
 JOIN 
     produto p ON cp.id_produto = p.id_produto
 WHERE 
@@ -77,6 +73,7 @@ GROUP BY
     p.categoria, lf.nome_loja
 ORDER BY 
     total_games DESC, lf.nome_loja;
+
 
 
 
